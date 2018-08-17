@@ -12,5 +12,5 @@ function getData(api) {
 }
 
 getData('https://swapi.co/api/people/1/')
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
+  .then(data => console.log(data)) // do stuff with data (if succeeds).
+  .catch(error => console.error(error)); // do stuff with error (if fails).
