@@ -3,14 +3,14 @@
 
 const request = require('request');
 
-function getData() {
+function getData(api) {
   return new Promise((resolve, reject) => {
-    request('https://swapi.co/api/people/1/', (error, res, starWarsData) => {
+    request(api, (error, res, starWarsData) => {
       error ? reject(error) : resolve(starWarsData);
     });
   });
 }
 
-getData()
+getData('https://swapi.co/api/people/1/')
   .then(data => console.log(data))
-  .catch(error => console.log(error));
+  .catch(error => console.error(error));
