@@ -3,7 +3,6 @@
 // ------------------------
 
 const request = require('request');
-const axios = require('axios');
 
 function getData(api) {
   return new Promise((resolve, reject) => {
@@ -22,9 +21,9 @@ getData('https://swapi.co/api/people/1/')
 // Using Async and Await
 // ----------------------
 
-async function getData(url) {
-  const res = await axios.get(url);
-  console.log(res.data);
+async function main() {
+  const res = await getData('https://swapi.co/api/people/1/');
+  console.log(res);
 }
 
-getData('https://swapi.co/api/people/1/');
+main();
